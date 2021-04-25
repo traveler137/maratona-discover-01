@@ -10,6 +10,10 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: 93.75;
+}
+
 body{
     background: #f0f2f5;
     font-family: "Poppins", sans-serif;
@@ -20,11 +24,45 @@ body{
     margin: auto;   
 }
 
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width:0 ;
+
+}
+
 h2{
     margin-top: 3.2rem;
     margin-bottom: 0.8rem;
     color: var(--color-dark);
     font: normal;
+}
+
+a {
+    color: #49aa26;
+    text-decoration: none;
+
+}
+
+
+
+a:hover{
+    color: #3dd715;
+
+}
+
+.button.new{
+    display: inline-block;
+    margin-bottom:.9rem;
+
+
+
 }
 
 header{
@@ -66,6 +104,10 @@ header{
 .card h3{
     font-weight: normal;
     font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 card p{
     font-size: 5rem;
@@ -81,9 +123,11 @@ card p{
 }
 
 #data-table{
+    display: block;
     width: 100%;
     color: #969cb3;
     border-spacing: 0 0.5rem;
+    overflow-x: auto;
 }
 
 
@@ -113,7 +157,13 @@ table tbody tr:hover{
 table thead tr th:first-child,
 table thead tr td:first-child{
 
-    border-radius: 0.25rem;
+    border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table thead tr td:last-child{
+
+    border-radius: 0 0.25rem 0.25rem 0;
 }
 
 td.description{
@@ -137,3 +187,17 @@ footer{
     color: var(--color-dark);
     opacity: 0.6;
 }
+
+/*Responsive*/
+@media (min-width: 800px) {
+    html{
+        font-size: 87.5%;
+
+    }
+
+    #balance{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+} 
