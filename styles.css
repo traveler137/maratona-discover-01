@@ -2,6 +2,8 @@
     --color-dark:#363f5f;
     --color-header:#747A9C;
     --color-green: #49aa26;
+    --color-green-hover: #3dd715;
+    --red:#e92929; 
 }
 
 *{
@@ -45,7 +47,7 @@ h2{
 }
 
 a {
-    color: #49aa26;
+    color:var(--color-green);
     text-decoration: none;
 
 }
@@ -53,7 +55,7 @@ a {
 
 
 a:hover{
-    color: #3dd715;
+    color: var(--color-green-hover);
 
 }
 
@@ -63,6 +65,42 @@ a:hover{
 
 
 
+}
+
+button{
+    width: 100%;
+    height: 45px;
+
+    border:none;
+    border-radius: .25rem;
+    color: white;
+    background: var(--color-green);
+    cursor:pointer;
+
+
+}
+
+button:hover{
+    background-color:var(--color-green-hover);
+    transition: 400ms;
+}
+
+.button.cancel{
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: .25rem;
+
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.45;
+
+}
+.button.cancel:hover{
+    opacity: 1;
+    transition: 400ms;
 }
 
 header{
@@ -122,14 +160,16 @@ card p{
 
 }
 
-#data-table{
+#trasaction {
     display: block;
     width: 100%;
-    color: #969cb3;
-    border-spacing: 0 0.5rem;
     overflow-x: auto;
 }
 
+#data-table{
+    width: 100%;
+    border-spacing: 0 0.5rem;
+}
 
 table tr{
     background: whitesmoke;
@@ -181,12 +221,82 @@ header h1{
 
 }
 
+.modal-overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    position: fixed;
+    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    z-index: 999;
+}
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
+.modal{
+    background: #f2f0f2;
+    padding: 2.4rem;
+    position: relative;
+    width: 500px;
+    max-width: 90%;
+
+    z-index: 1;
+}
+
+#form {
+    max-width: 500px;
+}
+
+#form h2{
+    margin-top: 0;
+}
+
+input{
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem;
+
+    width: 100%;
+}
+
+.input-group small{
+    opacity: .4;
+}
+
+.input-group.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.input-group.actions .button,
+.input-group.actions button{
+    width: 48%;
+
+}
+
+.input-group{
+    margin-top: 0.6rem;
+}
+
 footer{
     text-align: center;
     padding: 4rem 0 2rem;
     color: var(--color-dark);
     opacity: 0.6;
 }
+
+
 
 /*Responsive*/
 @media (min-width: 800px) {
